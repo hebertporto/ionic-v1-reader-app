@@ -1,0 +1,14 @@
+<ion-view view-title="#293 - Tales of Gods and Demons">
+  <ion-content padding= "false">
+      <div class="list card">
+       <div class="item">
+          <h2 class="text-center">{{::vm.chapter.title}}</h2>
+          <p><strong>Traduzido por: </strong> Fulando e Ciclano</p>
+          <p><strong>Revisado por: </strong> Beltradno</p>
+        </div>
+      </div>
+     <div class="item item-body">
+          <div ng-bind-html="::vm.chapter.content"></div>
+    </div>
+  </ion-content>
+</ion-view>

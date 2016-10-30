@@ -1,0 +1,13 @@
+<ion-view view-title="Home">
+  <ion-content padding= "false">
+     <h2>{{vm.title}}</h2>
+
+     <div class="list">
+        <a class="item item-thumbnail-left" ng-repeat="novel in vm.novels track by $index" ng-click="vm.getNovel()">
+          <img ng-src="{{::novel.img_url}}">
+          <h2>{{::novel.title}}</h2>
+          <p>{{::novel.description}}</p>
+        </a>
+     </div>
+  </ion-content>
+</ion-view>
