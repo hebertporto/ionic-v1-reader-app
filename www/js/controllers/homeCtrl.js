@@ -1,16 +1,19 @@
 angular
-    .module('novel')
+    .module('novel.controllers')
     .controller('homeCtrl', homeCtrl);
 
-    homeCtrl.$inject = ['$scope', '$cordovaInAppBrowser', '$state'];
+    homeCtrl.$inject = ['$scope'];
 
-    function homeCtrl ($scope, $cordovaInAppBrowser, $state) {
+    function homeCtrl ($scope) {
         var vm = this;
 
-        vm.titlePage  = "Lista de Novels";
+        $scope.settings = {
+          enableFriends: true
+        };
 
-        vm.novels     = getNovels();
-        vm.goNovel    = goNovel();
+        vm.title    = "Lista de Novels";
+        vm.novels   = getNovels();
+
 
         function getNovels(){
             return [
@@ -23,7 +26,4 @@ angular
             ];
         }
 
-        function goNovel(){
-            return $state.go('novel');
-        }
     }

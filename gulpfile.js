@@ -1,3 +1,5 @@
+var karma = require('karma').server;
+
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
@@ -12,6 +14,15 @@ var paths = {
 };
 
 gulp.task('default', ['sass']);
+
+gulp.task('test', function(done) {
+    karma.start({
+        configFile: __dirname + '/tests/my.conf.js',
+        singleRun: true
+    }, function() {
+        done();
+    });
+});
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')

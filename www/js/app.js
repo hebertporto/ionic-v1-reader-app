@@ -1,6 +1,8 @@
+angular.module('novel.controllers', []);
 angular.module('novel', [
     'ionic',
-    'ngCordova'
+    'ngCordova',
+    'novel.controllers'
 ])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -20,7 +22,6 @@ angular.module('novel', [
     $ionicConfigProvider.scrolling.jsScrolling(true);
 
     $stateProvider
-
     .state('home', {
         url: '/',
         templateUrl: 'templates/home/home.html',
