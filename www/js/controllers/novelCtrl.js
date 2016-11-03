@@ -9,7 +9,7 @@ angular
 
         vm.novel         = getNovel();
         vm.listChapters  = getChapters();
-        vm.goChapter     = goChapter();
+        vm.goChapter     = goChapter;
 
         function getNovel(){
                 return {
