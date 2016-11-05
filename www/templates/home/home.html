@@ -1,13 +1,25 @@
 <ion-view view-title="Home">
-  <ion-content padding= "false">
-     <h2>{{vm.title}}</h2>
+  <ion-content padding="false">
 
-     <div class="list">
-        <a class="item item-thumbnail-left" ng-repeat="novel in vm.novels track by $index" ng-click="vm.goNovel()">
-          <img ng-src="{{::novel.img_url}}">
-          <h2>{{::novel.title}}</h2>
-          <p>{{::novel.description}}</p>
-        </a>
-     </div>
+    <div class="row">
+      <div class="col col-100 text-center">
+        <h3>{{vm.title}}</h3></div>
+    </div>
+
+    <ion-slide-box show-pager="true">
+      <ion-slide ng-repeat="item in vm.data.slides">
+        <h1>{{item.title}}</h1>
+        <p>{{item.data}}
+      </ion-slide>
+    </ion-slide-box>
+
+    <div class="list">
+      <a class="item item-thumbnail-left" ng-repeat="novel in vm.novels track by $index" ng-click="vm.goNovel()">
+        <img ng-src="{{::novel.img_url}}">
+        <h2>{{::novel.title}}</h2>
+        <p>{{::novel.description}}</p>
+      </a>
+    </div>
+
   </ion-content>
 </ion-view>

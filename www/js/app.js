@@ -1,8 +1,11 @@
 angular.module('novel.controllers', []);
+angular.module('novel.services', []);
+
 angular.module('novel', [
     'ionic',
     'ngCordova',
-    'novel.controllers'
+    'novel.controllers',
+    'novel.services'
 ])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
