@@ -2,20 +2,14 @@ angular
     .module('novel.controllers')
     .controller('homeCtrl', homeCtrl);
 
-    homeCtrl.$inject = ['$state', '$interval', '$ionicSlideBoxDelegate'];
+    homeCtrl.$inject = ['$state', '$interval'];
 
-    function homeCtrl ($state, $interval, $ionicSlideBoxDelegate) {
+    function homeCtrl ($state, $interval) {
         var vm = this;
-
-        vm.settings = {
-          enableFriends: true
-        };
 
         vm.title    = "Lista de Novels";
         vm.novels   = getNovels();
         vm.goNovel  = goNovel;
-
-
 
         function getNovels(){
             return [
@@ -29,46 +23,7 @@ angular
         }
 
         function goNovel(){
-            $state.go('novel');
+            $state.go('app.novel');
         }
-
-
-        var maxSlides = 5;
-        var slideCounter = 2;
-
-        vm.data = {};
-        vm.data.slides = [
-            {
-                title : "Slide 1",
-                data  : "Slide 1 Content"
-            },
-            {
-                title : "Slide 2",
-                data  : "Slide 2 Content"
-            }
-        ];
-
-      $ionicSlideBoxDelegate.update();
-
-
-
-    var intervalId = $interval( function() {
-
-
-        if( slideCounter < maxSlides) {
-
-            slideCounter++;
-            console.log('Adding a slide');
-            vm.data.slides.push( {
-                title : "Slide " + slideCounter,
-                data : "Slide " + slideCounter + ' Content'
-            });
-
-            $ionicSlideBoxDelegate.update();
-        } else {
-            console.log('All full!');
-            $interval.cancel(intervalId);
-        }
-    }, 3000);
 
     }

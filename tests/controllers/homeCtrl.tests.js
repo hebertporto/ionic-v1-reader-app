@@ -1,6 +1,7 @@
 describe('homeCtrl Tests', function(){
     var vm,
-        stateMock;
+        stateMock,
+        intervalMock;
 
     // load the controller's module
     stateMock = jasmine.createSpyObj('$state spy', ['go']);
@@ -21,6 +22,6 @@ describe('homeCtrl Tests', function(){
 
     // tests start here
     it('should have enabled friends to be true', function(){
-        expect(vm.settings.enableFriends).toEqual(true);
+        expect(vm.title).toEqual("Lista de Novels");
     });
 });

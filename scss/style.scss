@@ -1,15 +1,12 @@
-.slider {
-  height: 200px;
-}
-.slider-slide {
-  padding-top: 40px;
-  color: #000;
-  background-color: #fff;
-  text-align: center;
+// Colors
+// -------------------------------
 
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-}
-
-.slider-pager-page i{
-}
+$light:                 #fff !default;
+$stable:                #f8f8f8 !default;
+$positive:              #4ea4be; //#4a87ee;
+$calm:                  #40A7CF !default; //#43cee6;
+$balanced:              #a2c57a !default; //#66cc33
+$energized:             #f0b840 !default;
+$assertive:             #ef4e3a !default;
+$royal:                 #8a6de9 !default;
+$dark:                  #444 !default;

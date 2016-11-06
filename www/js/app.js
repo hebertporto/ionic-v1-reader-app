@@ -25,32 +25,51 @@ angular.module('novel', [
     $ionicConfigProvider.scrolling.jsScrolling(true);
 
     $stateProvider
-    .state('home', {
-        url: '/',
-        templateUrl: 'templates/home/home.html',
-        controller: 'homeCtrl',
-        controllerAs: 'vm'
+     .state('app', {
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+        controller: 'homeCtrl'
     })
-    .state('novel', {
+    .state('app.home', {
+        url: '/home',
+        views: {
+          'menuContent': {
+              templateUrl: 'templates/home/home.html',
+              controller: 'homeCtrl',
+              controllerAs: 'vm'
+            }
+        }
+    })
+    .state('app.novel', {
         url: '/novel',
-        templateUrl: 'templates/novel/novel.html',
-        controller: 'novelCtrl',
-        controllerAs: 'vm'
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/novel/novel.html',
+            controller: 'novelCtrl',
+            controllerAs: 'vm'
+            }
+        },
     })
-    .state('chapter', {
+    .state('app.chapter', {
         url: '/chapter',
-        templateUrl: 'templates/chapter/chapter.html',
-        controller: 'chapterCtrl',
-        controllerAs: 'vm'
+        views: {
+          'menuContent': {
+              templateUrl: 'templates/chapter/chapter.html',
+              controller: 'chapterCtrl',
+              controllerAs: 'vm'
+            }
+        }
     })
-    .state('login', {
+    .state('app.login', {
         url: '/login',
-        templateUrl: 'templates/login/login.html',
-        controller: 'loginCtrl',
-        controllerAs: 'vm'
+        views: {
+          'menuContent': {
+              templateUrl: 'templates/login/login.html',
+              controller: 'loginCtrl',
+              controllerAs: 'vm'
+            }
+        }
     });
-
-    $urlRouterProvider.otherwise('/');
-
-
+    $urlRouterProvider.otherwise('/app/home');
 });

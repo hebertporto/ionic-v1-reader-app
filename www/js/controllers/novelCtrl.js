@@ -37,6 +37,6 @@ angular
 
         function goChapter(chapter){
             console.log("chapter", chapter);
-            $state.go('chapter');
+            $state.go('app.chapter');
         }
     }
