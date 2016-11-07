@@ -24,4 +24,9 @@ describe('homeCtrl Tests', function(){
     it('should have enabled friends to be true', function(){
         expect(vm.title).toEqual("Lista de Novels");
     });
+
+    it('should teste a function test', function () {
+      var texto = "oi";
+      expect(vm.teste(texto)).toEqual(texto);
+    })
 });
