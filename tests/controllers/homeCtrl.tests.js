@@ -17,9 +17,6 @@ describe('homeCtrl Tests', function(){
         vm = $controller('homeCtrl', {'$state': stateMock});
     }));
 
-
-
-
     // tests start here
     it('should have enabled friends to be true', function(){
         expect(vm.title).toEqual("Lista de Novels");
